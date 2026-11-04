@@ -114,11 +114,11 @@ var t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.s
 var floor=new THREE.Mesh(new THREE.PlaneGeometry(270,400),new THREE.MeshLambertMaterial({map:tileTex('#b8a888','#968766',60,60,270/60,400/60)}));
 floor.rotation.x=-Math.PI/2;floor.position.set(135,0,200);scene.add(floor);
 var ceil=new THREE.Mesh(new THREE.PlaneGeometry(270,400),mat(0xf3e8c4));
-ceil.rotation.x=Math.PI/2;ceil.position.set(135,260,200);scene.add(ceil);
-var wmB=new THREE.MeshLambertMaterial({map:tileTex('#a99b8b','#8a7c6b',60,30,1/60,1/30)}),wmL=new THREE.MeshLambertMaterial({map:tileTex('#c8bba8','#a89a86',60,30,400/60,260/30)});
-var lw=new THREE.Mesh(new THREE.PlaneGeometry(400,260),wmL);lw.rotation.y=Math.PI/2;lw.position.set(0,130,200);scene.add(lw);
-var rw=new THREE.Mesh(new THREE.PlaneGeometry(400,260),wmL);rw.rotation.y=-Math.PI/2;rw.position.set(270,130,200);scene.add(rw);
-var s=new THREE.Shape();s.moveTo(0,0);s.lineTo(270,0);s.lineTo(270,260);s.lineTo(0,260);s.lineTo(0,0);
+ceil.rotation.x=Math.PI/2;ceil.position.set(135,270,200);scene.add(ceil);
+var wmB=new THREE.MeshLambertMaterial({map:tileTex('#a99b8b','#8a7c6b',60,30,1/60,1/30)}),wmL=new THREE.MeshLambertMaterial({map:tileTex('#c8bba8','#a89a86',60,30,400/60,270/30)});
+var lw=new THREE.Mesh(new THREE.PlaneGeometry(400,270),wmL);lw.rotation.y=Math.PI/2;lw.position.set(0,135,200);scene.add(lw);
+var rw=new THREE.Mesh(new THREE.PlaneGeometry(400,270),wmL);rw.rotation.y=-Math.PI/2;rw.position.set(270,135,200);scene.add(rw);
+var s=new THREE.Shape();s.moveTo(0,0);s.lineTo(270,0);s.lineTo(270,270);s.lineTo(0,270);s.lineTo(0,0);
 var h=new THREE.Path();h.moveTo(102.5,130);h.lineTo(162.5,130);h.lineTo(162.5,190);h.lineTo(102.5,190);h.lineTo(102.5,130);s.holes.push(h);
 scene.add(new THREE.Mesh(new THREE.ShapeGeometry(s),wmB));
 function lit(x0,x1,y0,y1,z0,z1,c){var m=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,y1-y0,z1-z0),new THREE.MeshBasicMaterial({color:c}));m.position.set((x0+x1)/2,(y0+y1)/2,(z0+z1)/2);scene.add(m);}
@@ -305,7 +305,6 @@ function strut(){var b=new THREE.Mesh(new THREE.CylinderGeometry(1.0,1.0,1,10),S
 function run(s,xf,xa,xb,zs){
  beginG(null);
  box(xa,xb,Y1-2,Y1,zs[0],zs[zs.length-1],INTC);                                   // سقف الإضافة
- box(xa,xb,236,237.6,zs[0],zs[zs.length-1],INTC);                                 // رف
  var wl=s>0?[xa,xa+1]:[xb-1,xb];box(wl[0],wl[1],Y0,Y1,zs[0],zs[zs.length-1],INTC,false);   // ظهر
  zs.forEach(function(z,i){var a=i==0?z:(i==zs.length-1?z-1.6:z-0.8);box(xa,xb,Y0,Y1,a,a+1.6,INTC);});   // فواصل
  for(var i=0;i<zs.length-1;i++){
@@ -315,11 +314,11 @@ function run(s,xf,xa,xb,zs){
   var h0=s*0.75,h1=s*2.6;box(Math.min(h0,h1),Math.max(h0,h1),-43.5,-41.5,-w*0.22,w*0.22,HANDLE,false);
   endG();beginG(null);
   var f={G:G,s:s,st:[]};
-  [-1,1].forEach(function(k){var zo=k*(w/2-1.6);f.st.push({m:strut(),A:new THREE.Vector3(xf-s*20,241,zc+zo),B:new THREE.Vector3(-s*0.75,-14,zo)});});
+  [0].forEach(function(k){var zo=0;f.st.push({m:strut(),A:new THREE.Vector3(xf-s*20,241,zc+zo),B:new THREE.Vector3(-s*0.75,-14,zo)});});
   FL.push(f);}
  beginG(null);}
-run(1,37,0,37,[0,50,100,150,200,250,300]);
-run(-1,228,228,265,[0,52.5,105,150,195,247.5,300]);
+run(1,37,0,37,[0,100,200,300]);
+run(-1,228,228,265,[0,105,195,300]);
 })();
 var _v1=new THREE.Vector3(),_v2=new THREE.Vector3(),_up=new THREE.Vector3(0,1,0);
 function updFlaps(k){FL.forEach(function(f){f.G.rotation.z=f.s*k*1.22;f.G.updateMatrixWorld(true);
@@ -492,7 +491,7 @@ dim(-10,0,300,-10,85,300,'85');
 dim(-10,85,300,-10,140,300,'55');
 dim(-10,140,300,-10,215,300,'75');
 dim(-10,215,300,-10,260,300,'45');
-dim(-24,0,300,-24,260,300,'260');
+dim(-24,0,300,-24,260,300,'260');dim(-38,0,300,-38,270,300,'270');
 dim(132,86,0,132,86,62.5,'60');
 dim(0,217,300,37,217,300,'37');
 dim(228,217,300,265,217,300,'37');
@@ -631,14 +630,14 @@ return b;}
 
 function elev(Wd,rev){var W=Wd+95,H=350,b=B(W,H);
 b.mx=rev?function(z){return 45+Wd-z;}:function(z){return 45+z;};
-b.my=function(y){return 30+260-y;};
+b.my=function(y){return 30+270-y;};
 return b;}
-function vh(b,px){b.vd(0,85,px,'85');b.vd(85,140,px,'55');b.vd(140,215,px,'75');b.vd(215,260,px,'45');b.vd(0,260,px+14,'260');}
+function vh(b,px){b.vd(0,85,px,'85');b.vd(85,140,px,'55');b.vd(140,215,px,'75');b.vd(215,260,px,'45');b.vd(0,260,px+14,'260');b.vd(0,270,px+28,'270');}
 function seg(y0,y1,n){var w=n==3?[0.46,0.32,0.22]:n==2?[0.6,0.4]:[1],o=[],a=y0;for(var i=0;i<n;i++){var h=(y1-y0)*w[i];o.push([a,a+h]);a+=h;}return o;}
 function drawers(b,x0,x1,y0,y1,n){var S=seg(y0,y1,n);for(var i=0;i<n;i++)b.P(x0,x1,S[i][0],S[i][1]-1,'wood');}
 
 function back(){var b=elev(265,false);
-b.P(0,265,0,260,'wall');
+b.P(0,265,0,270,'wall');
 b.P(102.5,162.5,130,190,'win','60×60');b.T(132.5,122,'ارتفاع الحافة 130');
 b.P(60,205,0,8,'dark');
 b.P(60.5,107.5,8,79,'wood','ضلفة');
@@ -657,7 +656,7 @@ b.R(190,343,'الحائط الخلفي — المقاسات بالسنتيمتر
 return b.out();}
 
 function left(){var b=elev(300,true);
-b.P(0,300,0,260,'wall');
+b.P(0,300,0,270,'wall');
 b.P(60,300,0,8,'dark');
 b.P(0,62.5,82,85,'top');b.P(120,205,82,85,'top');b.P(265,300,82,85,'top');
 b.P(60,120,0,84.9,'steel','غسالة أطباق');b.P(66,114,68,71,'dark');
@@ -677,7 +676,7 @@ b.R(200,343,'الحائط الأيسر (يظهر من داخل المطبخ) —
 return b.out();}
 
 function right(){var b=elev(300,false);
-b.P(0,300,0,260,'wall');
+b.P(0,300,0,270,'wall');
 b.P(60,300,0,8,'dark');
 b.P(60.5,104.5,8,79,'wood','ضلفة 45');
 b.P(105,195,0,82,'steel');b.P(113,187,22,60,'dark','فرن');b.P(113,187,64,66,'dark');
