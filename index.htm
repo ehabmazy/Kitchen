@@ -45,6 +45,11 @@ button.on{border-color:var(--ac);color:var(--ac)}
 #pv .dt{font-size:4.8px;text-anchor:middle;font-weight:600;paint-order:stroke;stroke:var(--bg);stroke-width:1.3px}
 #pv .lb{font-size:4.1px;text-anchor:middle;dominant-baseline:middle}
 #pv .nt{font-size:4.4px;text-anchor:middle}
+#cninfo{position:absolute;left:8px;right:8px;bottom:34px;display:none;max-height:44%;overflow:auto;padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--panel);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:12.5px;line-height:1.75;z-index:9}
+#cninfo.show{display:block}
+#cninfo summary{font-weight:700;cursor:pointer}
+#cninfo ol{margin:6px 0 0;padding-inline-start:20px}
+#cninfo .t{display:inline-block;width:10px;height:10px;border-radius:2px;background:#1fa89a;margin-inline-end:4px}
 </style>
 </head>
 <body>
@@ -56,7 +61,7 @@ button.on{border-color:var(--ac);color:var(--ac)}
 <button id="b1">أمامي</button>
 <button id="b2">زاوية</button>
 <button id="b3">أعلى</button>
-<button id="bx" class="on">إغلاق الكل</button><button id="f0" class="on">التربو الأيمن: مفتوح</button><button id="f1" class="on">دولاب الصواني: مفتوح</button><button id="f2" class="on">التربو الأيسر: مفتوح</button><button id="f3" class="on">درج الملاعق: مفتوح</button><button id="bt1">عرض التربو</button><button id="bt2">عرض الصواني</button><button id="bt3">عرض تربو الأيسر</button><button id="bt4">عرض درج الملاعق</button><button id="f4">ضلف السقف: مغلق</button><button id="bt5">عرض ضلف السقف</button><button id="bvt" class="on">تهوية الثلاجة: ظاهرة</button><button id="bsl">تقليص عمق المكانس وضلف الثلاجة</button>
+<button id="bx" class="on">إغلاق الكل</button><button id="f0" class="on">التربو الأيمن: مفتوح</button><button id="f1" class="on">دولاب الصواني: مفتوح</button><button id="f2" class="on">التربو الأيسر: مفتوح</button><button id="f3" class="on">درج الملاعق: مفتوح</button><button id="bt1">عرض التربو</button><button id="bt2">عرض الصواني</button><button id="bt3">عرض تربو الأيسر</button><button id="bt4">عرض درج الملاعق</button><button id="f4">ضلف السقف: مغلق</button><button id="bt5">عرض ضلف السقف</button><button id="f5">الركنان (ليمنز): مغلق</button><button id="bt6">عرض الركنين (ليمنز)</button><button id="bct">رخام الركنين: ظاهر</button><button id="bci">شرح حل الركنين</button><button id="bvt" class="on">تهوية الثلاجة: ظاهرة</button><button id="bsl">تقليص عمق المكانس وضلف الثلاجة</button>
 <button id="bd">المقاسات</button>
 <button id="bg">جرانيت بني</button><button id="bc">ألوان الضلف: خشب طبيعي</button>
 <button id="bl">التصميم المقترح</button>
@@ -69,6 +74,16 @@ button.on{border-color:var(--ac);color:var(--ac)}
 <div id="joy"><div id="knob"></div></div>
 <div id="plan"><div class="ph"><button data-t="plan" class="on">المسقط الأفقي</button><button data-t="back">الحائط الخلفي</button><button data-t="left">الحائط الأيسر</button><button data-t="right">الحائط الأيمن</button><button id="pz1">+</button><button id="pz2">−</button><button id="pcl">رجوع للـ3D</button></div><div id="pv"></div></div>
 <div id="hint">اسحب للتدوير · بإصبعين للتقريب</div>
+<details id="cninfo"><summary>حل الركنين: ركن أعمى بسلتي ليمنز</summary><ol>
+<li>المشكلة: كل ركن كان صندوقاً 60×60 مسدوداً من الجهتين بالوحدات المجاورة، فلا يمكن فتحه.</li>
+<li>الحل: دمج كل ركن مع الوحدة المجاورة في صندوق واحد "ركن أعمى". الضلفة الموجودة أصلاً صارت بوابة الوصول، فلم تُضف أي ضلفة.</li>
+<li>الركن الأيسر: صندوق 108×60 وضلفة 48 (وحدة الظهر الأولى). الركن الأيمن: صندوق 105×60 وضلفة 45 (أول وحدة في الجناح الأيمن).</li>
+<li>داخل كل ركن سلتان سلكيتان بمستويين (ماجيك كورنر / ليمنز): تُفتح الضلفة، تخرج السلة الأمامية أولاً، ثم تنزلق الخلفية من الجزء الأعمى إلى فتحة الضلفة وتخرج.</li>
+<li>مقاسا السلة: 43×46 سم يساراً و40×46 يميناً، والمستويان على ارتفاع 13 و46 سم من الأرض.</li>
+<li>الهاردوير يُشترى جاهزاً (ماجيك كورنر أو ليمانز)، ولكل نوع حد أدنى لعرض الضلفة. ضلفة الركن الأيمن 45 سم هي الحد الأدنى لمعظم الأنواع، فاسأل المورد قبل التصنيع، ولو لزم 50 فخذ 5 سم من الوحدة المجاورة.</li>
+<li>ألواح العلب: يتوفر جانبان لكل ركن ورفّان (نحو 2 م² معاً)، أي أقل من لوح واحد.</li>
+<li><span class="t"></span>الأخضر (يظهر عند فتح الركنين): عارضتان علويتان تحملان الرخام بدل الرف.</li>
+<li>زر «عرض الركنين» يبدّل بين ثلاث زوايا: عامة، الركن الأيسر، الركن الأيمن. والحل يظهر في «التصميم الحالي» فقط.</li></ol></details>
 </div>
 <script>window.onerror=function(m,u,l){try{var d=document.createElement('div');d.style.cssText='position:fixed;top:44px;left:8px;right:8px;background:#fee;color:#900;padding:8px;font:12px monospace;z-index:99;direction:ltr;border-radius:6px';d.textContent='Error: '+m+' (line '+l+')';document.body.appendChild(d);}catch(e){}};</script>
 <script>/**
@@ -88,7 +103,7 @@ var camera=new THREE.PerspectiveCamera(60,1,1,3000);
 var hemi=new THREE.HemisphereLight(0xffffff,0xb9a58f,0.95);scene.add(hemi);
 var dl=new THREE.DirectionalLight(0xffffff,0.5);dl.position.set(200,450,520);scene.add(dl);
 var pl=new THREE.PointLight(0xfff3e0,0.5,500);pl.position.set(132,230,150);scene.add(pl);
-var _sa=scene.add.bind(scene),curG=null;scene.add=function(o){return curG?curG.add(o):_sa(o);};var L1=new THREE.Group(),L2=new THREE.Group();_sa(L1);_sa(L2);L2.visible=false;var LM=new THREE.Group(),LB=new THREE.Group();_sa(LM);_sa(LB);var LD=new THREE.Group(),LX=new THREE.Group();_sa(LD);_sa(LX);LX.visible=false;function beginG(g){curG=g;}function endG(){curG=null;}
+var _sa=scene.add.bind(scene),curG=null;scene.add=function(o){return curG?curG.add(o):_sa(o);};var L1=new THREE.Group(),L2=new THREE.Group();_sa(L1);_sa(L2);L2.visible=false;var LM=new THREE.Group(),LB=new THREE.Group();_sa(LM);_sa(LB);var LD=new THREE.Group(),LX=new THREE.Group();_sa(LD);_sa(LX);LX.visible=false;var LC=new THREE.Group(),LS=new THREE.Group(),LSM=new THREE.Group(),LDR=new THREE.Group();_sa(LC);_sa(LS);_sa(LSM);LS.visible=false;LSM.visible=false;LDR.visible=false;function beginG(g){curG=g;}function endG(){curG=null;}
 var _wc={};function woodMap(){return woodMapC('#b38f66','92,60,32','235,205,160');}function woodMapC(base,dkc,ltc){if(_wc[base])return _wc[base];var c=document.createElement('canvas');c.width=256;c.height=512;var x=c.getContext('2d');x.fillStyle=base;x.fillRect(0,0,256,512);var sd=11;function r(){sd=(sd*16807)%2147483647;return sd/2147483647;}
 for(var i=0;i<140;i++){var px=r()*256,w=0.6+r()*2.4,dk=r()<0.6;x.strokeStyle=dk?'rgba('+dkc+','+(0.12+r()*0.28)+')':'rgba('+ltc+','+(0.1+r()*0.2)+')';x.lineWidth=w;x.beginPath();x.moveTo(px,0);var a=(r()-0.5)*14,b=(r()-0.5)*14;x.bezierCurveTo(px+a,170,px+b,340,px+(a+b)/2,512);x.stroke();}
 for(var k=0;k<3;k++){var kx=20+r()*216,ky=40+r()*430;x.strokeStyle='rgba('+dkc+',0.35)';for(var e=1;e<5;e++){x.lineWidth=0.8;x.beginPath();x.ellipse(kx,ky,3+e*3,10+e*9,0,0,6.3);x.stroke();}}
@@ -163,9 +178,10 @@ for(var fi=0;fi<4;fi++){var fnG=new THREE.Group();fnG.position.set(148.5,179,2);
 })();
 var lgc=document.createElement('canvas');lgc.width=lgc.height=64;var lgx=lgc.getContext('2d');lgx.fillStyle='#a50034';lgx.beginPath();lgx.arc(32,32,30,0,7);lgx.fill();lgx.fillStyle='#fff';lgx.font='bold 26px Arial';lgx.textAlign='center';lgx.textBaseline='middle';lgx.fillText('LG',32,34);
 var lgp=new THREE.Mesh(new THREE.PlaneGeometry(5.5,5.5),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(lgc),transparent:true}));lgp.rotation.y=-Math.PI/2;lgp.position.set(196.5,173,374);scene.add(lgp);
-box(0,60,0,82,0,60,WOOD);box(205,265,0,82,0,60,WOOD);beginG(LM);box(60,205,0,82,0,60,WOOD);endG();
+beginG(LS);box(0,60,0,82,0,60,WOOD);box(205,265,0,82,0,60,WOOD);box(205,265,0,82,60,105,WOOD);endG();   // الركنان القديمان المصمتان (للتصميمين الآخرين فقط)
+beginG(LSM);box(60,108,0,82,0,60,WOOD);endG();beginG(LM);box(108,205,0,82,0,60,WOOD);endG();
 box(0,60,0,82,120,205,WOOD);box(0,60,0,82,265,300,WOOD);
-box(205,265,0,82,60,270,WOOD);
+box(205,265,0,82,105,270,WOOD);
 function mkGranite(base,cols){var c=document.createElement('canvas');c.width=c.height=256;var x=c.getContext('2d');
 x.fillStyle=base;x.fillRect(0,0,256,256);
 var seed=7;function r(){seed=(seed*16807)%2147483647;return seed/2147483647;}
@@ -174,9 +190,10 @@ x.globalAlpha=1;
 var t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(5,5);return t;}
 var graniteTex=mkGranite('#6b4430',['#3a2418','#4a2e1f','#8a5c3e','#a97a55','#1f130c','#c9a27a']),grayTex=mkGranite('#7a7c7f',['#2e3033','#4a4d50','#9a9da0','#b8bbbd','#17181a','#d6d8d9']),tops=[];
 function topBox(a,b,c,d,e,f){var m=box(a,b,c,d,e,f,TOP);m.material=new THREE.MeshLambertMaterial({color:0xffffff,map:grayTex});tops.push(m);return m;}
-topBox(0,62.5,82,85,0,62.5);topBox(202.5,265,82,85,0,62.5);beginG(LM);topBox(62.5,202.5,82,85,0,62.5);endG();
+var cnTops=[];function cnTop(par,a,b,c,d,e,f){var G=new THREE.Group();if(par)par.add(G);else _sa(G);var pc=curG;curG=G;topBox(a,b,c,d,e,f);curG=pc;cnTops.push(G);return G;}
+cnTop(null,0,62.5,82,85,0,62.5);cnTop(null,202.5,265,82,85,0,62.5);cnTop(LM,62.5,108,82,85,0,62.5);beginG(LM);topBox(108,202.5,82,85,0,62.5);endG();
 topBox(0,62.5,82,85,120,205);topBox(0,62.5,82,85,265,300);
-topBox(202.5,265,82,85,60,105);topBox(202.5,265,82,85,195,276);
+cnTop(null,202.5,265,82,85,60,105);topBox(202.5,265,82,85,195,276);
 
 
 function seg(y0,y1,n){var w=n==3?[0.46,0.32,0.22]:n==2?[0.6,0.4]:[1],o=[],a=y0;for(var i=0;i<n;i++){var h=(y1-y0)*w[i];o.push([a,a+h]);a+=h;}return o;}
@@ -195,9 +212,41 @@ box(xf-1.5,xf,8,79,a+0.5,b-0.5,WOOD2);
 var hz=nd==1?b-6:(i?a+4:b-4);box(xf-3.5,xf-1.5,45,65,hz-1,hz+1,HANDLE,false);}}
 function dxDraw(xf,z0,z1,n){var zc=(z0+z1)/2,S=seg(8,79,n);for(var i=0;i<n;i++){var a=S[i][0],h=S[i][1]-S[i][0];
 box(xf-1.5,xf,a,a+h-1,z0+0.5,z1-0.5,WOOD2);box(xf-3.5,xf-1.5,a+h-9,a+h-7,zc-8,zc+8,HANDLE,false);}}
-beginG(LB);dzDoor(60,108,8,79,1);
+beginG(LB);
 dzDraw(108,156,8,3);
 dzDraw(156,205,56,1);dzDoor(156,205,8,55,1);endG();
+// ===== حل الركنين: ركن أعمى (الركن + الوحدة المجاورة) بسلتين سلكيتين (ليمنز / ماجيك كورنر) =====
+var cnA=[],cnRail=[],cnIN=0xe6d8bf,cnWR=0x8d9398,cnCW=new THREE.Color(WOOD),cnCT=new THREE.Color(0x1fa89a);
+function cnCl(v){return v<0?0:v>1?1:v;}
+function cnB(g,x0,x1,y0,y1,z0,z1,c,e){var pc=curG;curG=g;var m=box(x0,x1,y0,y1,z0,z1,c,e);curG=pc;return m;}
+function cnBasket(g,x0,x1,z0,z1){var b=new THREE.Group(),k;g.add(b);
+ [13,46].forEach(function(y){
+  for(k=z0;k<=z1;k+=5)cnB(b,x0,x1,y,y+0.5,k,k+0.5,cnWR,false);
+  cnB(b,x0,x1,y+8.5,y+9,z0,z0+0.5,cnWR,false);cnB(b,x0,x1,y+8.5,y+9,z1-0.5,z1,cnWR,false);
+  cnB(b,x0,x0+0.5,y+8.5,y+9,z0,z1,cnWR,false);cnB(b,x1-0.5,x1,y+8.5,y+9,z0,z1,cnWR,false);});
+ [[x0,z0],[x1-0.6,z0],[x0,z1-0.6],[x1-0.6,z1-0.6]].forEach(function(p){cnB(b,p[0],p[0]+0.6,13,55,p[1],p[1]+0.6,cnWR,false);});
+ return b;}
+// W2 = عرض ضلفة الوصول، px/ry = موضع الركن ودورانه، left = الركن الأيسر (يُقسَّم عند x=60 ليعمل زر إخفاء الأيسر)، rz = مسافة خروج السلة الخلفية للأمام
+function cnCorner(W2,px,ry,left,rz){
+ var g=new THREE.Group(),TW=60+W2,dw=new THREE.Group(),bw=W2-5,pw=W2-1.5;
+ LC.add(g);g.position.set(px,0,0);g.rotation.y=ry;if(!left)g.userData.sd='r';
+ function P(x0,x1,y0,y1,z0,z1,c,e){var o=[];
+  if(left&&x0<60&&x1>60){o.push(cnB(g,x0,60,y0,y1,z0,z1,c,e),cnB(g,60,x1,y0,y1,z0,z1,c,e));}else o.push(cnB(g,x0,x1,y0,y1,z0,z1,c,e));return o;}
+ P(0,1.8,0,82,0,60,WOOD);P(TW-1.8,TW,0,82,0,60,WOOD);                    // الجانبان
+ P(1.8,TW-1.8,0,9.8,0,60,WOOD);P(1.8,TW-1.8,9.8,10,0.6,58.2,cnIN,false);   // القاعدة + بطانة الأرضية
+ P(1.8,TW-1.8,10,80.2,0,0.6,cnIN,false);                                 // الظهر الداخلي
+ [[0,12],[48,60]].forEach(function(r){P(1.8,TW-1.8,80.2,82,r[0],r[1],WOOD).forEach(function(m){cnRail.push(m.material);});});   // العارضتان العلويتان (خلفية وأمامية)
+ P(1.8,60,9.8,80.2,58.2,60,WOOD);                                        // واجهة الجزء الأعمى (مغلقة)
+ dw.position.set(TW-1,0,60);g.add(dw);                                   // مفصلة الضلفة من جهة الوحدة المجاورة
+ cnB(dw,-pw,0,8,79,0,1.5,WOOD2);cnB(dw,-pw+4.5,-pw+6.5,45,65,1.5,3.5,HANDLE,false);   // الضلفة الموجودة أصلاً = بوابة الوصول
+ var fb=cnBasket(g,62,62+bw,8,54),rb=cnBasket(g,10,10+bw,8,54);          // السلة الأمامية + السلة الخلفية (في الجزء الأعمى)
+ if(left){fb.userData.sd='k';dw.userData.sd='k';rb.userData.sd='l';}
+ // التسلسل: الضلفة تُفتح → الأمامية تخرج → الخلفية تنزلق جانباً → ثم تخرج للأمام
+ cnA.push(function(t){dw.rotation.y=1.57*cnCl(t/0.3);fb.position.z=64*cnCl((t-0.3)/0.32);rb.position.x=52*cnCl((t-0.58)/0.28);rb.position.z=rz*cnCl((t-0.86)/0.14);});}
+cnCorner(48,0,0,true,14);                      // الركن الأيسر: صندوق 108×60 يُفتح من ضلفة الظهر 48
+cnCorner(45,265,-Math.PI/2,false,10);          // الركن الأيمن: صندوق 105×60 يُفتح من ضلفة الجناح 45
+function cnApply(k){cnA.forEach(function(f){f(k);});var q=cnCl(k*4);cnRail.forEach(function(m){m.color.copy(cnCW).lerp(cnCT,q);});}
+
 // ===== تربو الجدار الأيسر (z265-300) بدل الأدراج الثلاثة: سلال بلاستيك مخرّمة على إطار منزلق =====
 var TURBO_L=42,TL=new THREE.Group();TL.userData.sd='l';_sa(TL);
 (function(){
@@ -225,11 +274,11 @@ box(xb-1,xe+1,8,9.5,zl-0.5,zr+0.5,WH,false);                      // قاعدة 
 [[xb,zl-1],[xb,zr],[xe-1,zl-1],[xe-1,zr]].forEach(function(p){box(p[0],p[0]+1,8,79,p[1],p[1]+1,STEEL,false);});  // أعمدة الإطار
 endG();
 })();
-beginG(L1);dxDoor(205,60,105,1);(function(){var xf=205,z0=220,z1=276,zc=248,S=seg(8,79,3);for(var i=0;i<2;i++){var a=S[i][0],h=S[i][1]-S[i][0];
+L1.add(LDR);beginG(LDR);dxDoor(205,60,105,1);beginG(L1);(function(){var xf=205,z0=220,z1=276,zc=248,S=seg(8,79,3);for(var i=0;i<2;i++){var a=S[i][0],h=S[i][1]-S[i][0];
 box(xf-1.5,xf,a,a+h-1,z0+0.5,z1-0.5,WOOD2);box(xf-3.5,xf-1.5,a+h-9,a+h-7,zc-8,zc+8,HANDLE,false);}
 box(204.6,205,S[2][0]+0.4,S[2][1]-1.4,z0+1,z1-1,0x161616,false);})();endG();
 // ===== تربو الزيوت (z195-220) + أدراج متدرجة (z220-270) + دولاب المكانس (z270-300) + دولاب الصواني فوق الثلاجة =====
-var TURBO_D=42,TG=new THREE.Group(),DA=new THREE.Group(),DB=new THREE.Group(),SP=new THREE.Group(),SP_D=35,BF=new THREE.Group(),BS=new THREE.Group(),TB_F=new THREE.Group(),TB_S=new THREE.Group(),DA2=new THREE.Group(),DB2=new THREE.Group(),FT=[1,1,1,1,0],FK=[1,1,1,1,0];
+var TURBO_D=42,TG=new THREE.Group(),DA=new THREE.Group(),DB=new THREE.Group(),SP=new THREE.Group(),SP_D=35,BF=new THREE.Group(),BS=new THREE.Group(),TB_F=new THREE.Group(),TB_S=new THREE.Group(),DA2=new THREE.Group(),DB2=new THREE.Group(),FT=[1,1,1,1,0,0],FK=[1,1,1,1,0,0];
 TG.userData.sd='r';DA.userData.sd='r';DB.userData.sd='r';SP.userData.sd='r';L1.add(TG);L1.add(SP);L1.add(BF);L1.add(BS);BS.visible=false;
 (function(){
 var z0=195,z1=220;
@@ -358,8 +407,8 @@ function updFlaps(k){FL.forEach(function(f){f.G.rotation.z=f.s*k*1.22;f.G.update
   var bl=len*0.5;
   t.m.b.scale.set(1,bl,1);t.m.b.position.copy(t.A).addScaledVector(_v2,bl/2);t.m.b.quaternion.setFromUnitVectors(_up,_v2);
   var rl=len-bl;t.m.r.scale.set(1,rl,1);t.m.r.position.copy(t.A).addScaledVector(_v2,bl+rl/2);t.m.r.quaternion.setFromUnitVectors(_up,_v2);});});}
-function fxApply(){updFlaps(FK[4]);TG.position.x=-TURBO_D*FK[0];DA.rotation.y=DA2.rotation.y=-1.745*FK[1];DB.rotation.y=DB2.rotation.y=1.745*FK[1];TL.position.x=TURBO_L*FK[2];SP.position.x=-SP_D*FK[3];}
-function fxStep(dt){var ch=false;for(var i=0;i<5;i++){var d=FT[i]-FK[i];if(Math.abs(d)<0.002){if(FK[i]!==FT[i]){FK[i]=FT[i];ch=true;}}else{FK[i]+=d*Math.min(1,dt*6);ch=true;}}if(ch)fxApply();}
+function fxApply(){updFlaps(FK[4]);TG.position.x=-TURBO_D*FK[0];DA.rotation.y=DA2.rotation.y=-1.745*FK[1];DB.rotation.y=DB2.rotation.y=1.745*FK[1];TL.position.x=TURBO_L*FK[2];SP.position.x=-SP_D*FK[3];cnApply(FK[5]);}
+function fxStep(dt){var ch=false;for(var i=0;i<FT.length;i++){var d=FT[i]-FK[i];if(Math.abs(d)<0.002){if(FK[i]!==FT[i]){FK[i]=FT[i];ch=true;}}else{FK[i]+=d*Math.min(1,dt*6);ch=true;}}if(ch)fxApply();}
 fxApply();
 
 // غسالة أطباق بيكو 14 فرد: 60 عرض × 85 ارتفاع × 60 عمق
@@ -602,7 +651,7 @@ function go(a,b,c){if(walking)setWalk(false);T.set(135,95,200);tt=a;tp=b;tr=c;}
 document.getElementById('b1').onclick=function(){go(0,1.15,540);};
 document.getElementById('b2').onclick=function(){go(0.7,1.0,470);};
 document.getElementById('b3').onclick=function(){go(0,0.22,640);};
-var bxEl=document.getElementById('bx'),FBN=['f0','f1','f2','f3','f4'],FNM=['التربو الأيمن','دولاب الصواني','التربو الأيسر','درج الملاعق','ضلف السقف'];
+var bxEl=document.getElementById('bx'),FBN=['f0','f1','f2','f3','f4','f5'],FNM=['التربو الأيمن','دولاب الصواني','التربو الأيسر','درج الملاعق','ضلف السقف','الركنان (ليمنز)'];
 function fxUI(){FBN.forEach(function(id,i){var e=document.getElementById(id);e.classList.toggle('on',!!FT[i]);e.textContent=FNM[i]+(FT[i]?': مفتوح':': مغلق');});var any=FT.slice(0,4).some(function(v){return v;});bxEl.classList.toggle('on',any);bxEl.textContent=any?'إغلاق الكل':'فتح الكل';}
 FBN.forEach(function(id,i){document.getElementById(id).onclick=function(){FT[i]=FT[i]?0:1;fxUI();};});
 bxEl.onclick=function(){var any=FT.slice(0,4).some(function(v){return v;});for(var i=0;i<4;i++)FT[i]=any?0:1;fxUI();};
@@ -617,11 +666,11 @@ document.getElementById('bt2').onclick=function(){if(walking)setWalk(false);fxOp
 document.getElementById('bt3').onclick=function(){if(walking)setWalk(false);fxOpen(2);T.set(75,45,282);tt=1.85;tp=1.05;tr=150;};
 document.getElementById('bt4').onclick=function(){if(walking)setWalk(false);fxOpen(3);T.set(185,70,245);tt=-1.57;tp=0.8;tr=165;};
 document.getElementById('bd').onclick=function(){dims.visible=!dims.visible;this.classList.toggle('on',dims.visible);};
-var lay=0;document.getElementById('bl').onclick=function(){lay=(lay+1)%3;var lay2=lay==1;window.LY=lay2;window.LY3=lay==2;L1.visible=lay!=1;L2.visible=lay2;LM.visible=lay!=2;LB.visible=lay==0;LX.visible=lay==2;if(lay){dims.visible=false;document.getElementById('bd').classList.remove('on');}this.classList.toggle('on',lay>0);this.textContent=['التصميم المقترح','التصميم الثالث','التصميم الحالي'][lay];};
+var lay=0;document.getElementById('bl').onclick=function(){lay=(lay+1)%3;var lay2=lay==1;window.LY=lay2;window.LY3=lay==2;L1.visible=lay!=1;L2.visible=lay2;LM.visible=lay!=2;LB.visible=lay==0;LX.visible=lay==2;LC.visible=lay==0;LS.visible=lay!=0;LSM.visible=lay==1;LDR.visible=lay==2;if(lay){dims.visible=false;document.getElementById('bd').classList.remove('on');}this.classList.toggle('on',lay>0);this.textContent=['التصميم المقترح','التصميم الثالث','التصميم الحالي'][lay];};
 var hid={l:false,r:false},sideCache=null;
-function sides(){if(sideCache)return sideCache;scene.updateMatrixWorld(true);var Lf=[],Rt=[],bx=new THREE.Box3();
-scene.traverse(function(o){if(!o.geometry||o.isSprite)return;var p=o.parent,sd=null;while(p){if(p===dims||p===sg)return;if(p.userData&&p.userData.sd)sd=p.userData.sd;p=p.parent;}if(sd==='l'){Lf.push(o);return;}if(sd==='r'){Rt.push(o);return;}bx.setFromObject(o);if(bx.isEmpty())return;if(bx.max.x<=64)Lf.push(o);else if(bx.min.x>=195)Rt.push(o);});
-sideCache={l:Lf,r:Rt};return sideCache;}
+function sides(){if(sideCache)return sideCache;var cn5=FK[5];if(cn5){FK[5]=0;fxApply();}scene.updateMatrixWorld(true);var Lf=[],Rt=[],bx=new THREE.Box3();
+scene.traverse(function(o){if(!o.geometry||o.isSprite)return;var p=o.parent,sd=null;while(p){if(p===dims||p===sg)return;if(p.userData&&p.userData.sd)sd=p.userData.sd;p=p.parent;}if(sd==='k')return;if(sd==='l'){Lf.push(o);return;}if(sd==='r'){Rt.push(o);return;}bx.setFromObject(o);if(bx.isEmpty())return;if(bx.max.x<=64)Lf.push(o);else if(bx.min.x>=195)Rt.push(o);});
+sideCache={l:Lf,r:Rt};if(cn5){FK[5]=cn5;fxApply();}return sideCache;}
 function hideSide(k,btn,lab){hid[k]=!hid[k];sides()[k].forEach(function(o){o.visible=!hid[k];});btn.classList.toggle('on',hid[k]);btn.textContent=(hid[k]?'إظهار ':'إخفاء ')+lab;}
 document.getElementById('bhl').onclick=function(){hideSide('l',this,'الأيسر');};
 document.getElementById('bhr').onclick=function(){hideSide('r',this,'الأيمن');};
@@ -639,6 +688,16 @@ doorMats.forEach(function(m){if(t.w){m.map=woodMapC(t.w[0],t.w[1],t.w[2]);m.colo
 handleMats.forEach(function(m){m.color.setHex(t.h);});
 this.textContent='ألوان الضلف: '+t.n;this.classList.toggle('on',thI>0);};
 var gray=true;document.getElementById('bg').onclick=function(){gray=!gray;tops.forEach(function(m){m.material.map=gray?grayTex:graniteTex;m.material.needsUpdate=true;});this.textContent=gray?'جرانيت بني':'جرانيت رمادي';document.documentElement.style.setProperty('--top',gray?'rgba(120,122,125,.8)':'rgba(107,68,48,.8)');};
+// ===== عرض حل الركنين (ليمنز) =====
+var cnTV=true,cnVi=0,cnNames=['عرض الركنين (ليمنز)','عرض الركن الأيسر','عرض الركن الأيمن'],cnVw=[[135,40,45,0,0.9,620],[60,45,55,0.35,0.85,250],[220,45,75,-0.9,0.85,250]];
+var bct=document.getElementById('bct'),cni=document.getElementById('cninfo'),b6=document.getElementById('bt6'),bci=document.getElementById('bci');
+function cnLay0(){var bl=document.getElementById('bl');while(lay!==0)bl.onclick();}
+function cnTopsShow(v){cnTV=v;cnTops.forEach(function(G){G.visible=v;});bct.classList.toggle('on',!v);bct.textContent=v?'رخام الركنين: ظاهر':'رخام الركنين: مخفي';}
+bct.onclick=function(){cnTopsShow(!cnTV);};
+document.getElementById('f5').addEventListener('click',function(){if(FT[5])cnLay0();});
+bci.onclick=function(){var s=!cni.classList.contains('show');cni.classList.toggle('show',s);cni.open=s;bci.classList.toggle('on',s);};
+b6.onclick=function(){if(walking)setWalk(false);cnLay0();fxOpen(5);cnTopsShow(false);cni.classList.add('show');cni.open=false;bci.classList.add('on');
+ var v=cnVw[cnVi];T.set(v[0],v[1],v[2]);tt=v[3];tp=v[4];tr=v[5];cnVi=(cnVi+1)%3;b6.textContent=cnNames[cnVi];};
 camera.fov=45;camera.updateProjectionMatrix();
 })();
 </script>
@@ -674,7 +733,7 @@ function back(){var b=elev(265,false);
 b.P(0,265,0,270,'wall');
 b.P(102.5,162.5,130,190,'win','60×60');b.T(132.5,122,'ارتفاع الحافة 130');
 b.P(60,205,0,8,'dark');
-b.P(60.5,107.5,8,79,'wood','ضلفة');
+b.P(60.5,107.5,8,79,'wood','ضلفة+ليمنز');
 drawers(b,108.5,155.5,8,79,3);
 b.P(156.5,204.5,56,78,'wood','درج');b.P(156.5,204.5,8,55,'wood','ضلفة');
 b.P(0,265,82,85,'top');
@@ -712,7 +771,7 @@ return b.out();}
 function right(){var b=elev(300,false);
 b.P(0,300,0,270,'wall');
 b.P(60,300,0,8,'dark');
-b.P(60.5,104.5,8,79,'wood','ضلفة 45');
+b.P(60.5,104.5,8,79,'wood','ضلفة 45+ليمنز');
 b.P(105,195,0,82,'steel');b.P(113,187,22,60,'dark','فرن');b.P(113,187,64,66,'dark');
 for(var i=0;i<4;i++)b.C(120+i*20,76,2.5,'dark');
 b.P(195.5,219.5,8,79,'wood','تربو');drawers(b,220.5,275.5,8,79,3);b.T(245,70.5,'ملاعق','lb');
@@ -733,16 +792,16 @@ function plan(){var m=58,b=B(265+2*m+20,300+2*m+30);
 b.mx=function(x){return m+x;};b.my=function(z){return m+z;};
 b.P(0,265,0,300,'wall');
 if(window.LY3){b.P(0,60,0,60,'base');b.P(205,265,0,60,'base');}else b.P(0,265,0,60,'base');b.P(0,60,60,300,'base');b.P(205,265,60,window.SLIM?276:296,'base');if(window.SLIM)b.P(228,265,276,296,'base');
-if(window.LY3){}else if(window.LY){[60,87.5,177.5,205].forEach(function(x){b.L(x,0,x,60,'thin');});}else{b.L(108,0,108,60,'thin');b.L(156,0,156,60,'thin');b.L(60,0,60,60,'thin');b.L(205,0,205,60,'thin');}
+if(window.LY3){}else if(window.LY){[60,87.5,177.5,205].forEach(function(x){b.L(x,0,x,60,'thin');});}else{b.L(108,0,108,60,'thin');b.L(156,0,156,60,'thin');b.L(205,0,205,60,'thin');}
 [120,162.5,205,265].forEach(function(z){b.L(0,z,60,z,'thin');});b.P(0,60,60,120,'steel');b.P(0,60,205,265,'white');
 (window.LY?[120,180,240]:[105,195,220,276]).forEach(function(z){b.L(205,z,265,z,'thin');});
 b.P(102.5,162.5,0,3,'win');
 if(!window.LY)b.P(205,265,105,195,'steel');else{b.P(87.5,177.5,0,60,'steel');[[110,15],[110,45],[155,15],[155,45]].forEach(function(p){b.C(p[0],p[1],9,'dark');});}
 if(!window.LY)[[222,125],[222,175],[250,125],[250,175]].forEach(function(p){b.C(p[0],p[1],9,'dark');});
 if(window.KS){b.P(8,52,123,168,'steel');b.T(30,146,'حوض','nt');}else{b.P(8,52,122.5,160.5,'steel');b.P(8,52,164.5,202.5,'steel');b.T(30,143,'حوض','nt');b.T(30,185,'حوض','nt');}
-if(window.LY3){}else if(window.LY){b.T(74,30,'27','lb');b.T(132,30,'بوتاجاز','lb');b.T(191,30,'27','lb');}else{b.T(84,30,'ضلفة','lb');b.T(132,30,'3 أدراج','lb');b.T(180,30,'درج+ضلفة','lb');}
+if(window.LY3){}else if(window.LY){b.T(74,30,'27','lb');b.T(132,30,'بوتاجاز','lb');b.T(191,30,'27','lb');}else{b.T(54,16,'ركن أعمى 108×60','lb');b.T(84,38,'ضلفة 48 + ليمنز','lb');b.T(132,30,'3 أدراج','lb');b.T(180,30,'درج+ضلفة','lb');}
 b.T(30,90,'غ.أطباق','lb');b.T(30,235,'غسالة','lb');b.T(30,283,'تربو','lb');
-if(window.LY){b.T(235,90,'أدراج','lb');b.T(235,150,'ضلفة','lb');b.T(235,210,'ضلفة','lb');b.T(235,270,'أدراج','lb');}else{b.T(235,80,'ضلفة','lb');b.T(235,207,'تربو','lb');b.T(235,245,'أدراج','lb');b.T(235,285,'مكانس','lb');}
+if(window.LY){b.T(235,90,'أدراج','lb');b.T(235,150,'ضلفة','lb');b.T(235,210,'ضلفة','lb');b.T(235,270,'أدراج','lb');}else{if(window.LY3)b.T(235,80,'ضلفة','lb');else{b.T(235,16,'ركن أعمى 105×60','lb');b.T(235,88,'ضلفة 45 + ليمنز','lb');}b.T(235,207,'تربو','lb');b.T(235,245,'أدراج','lb');b.T(235,285,'مكانس','lb');}
 for(var q=0;q<6;q++)b.P(0,37,q*50,q*50+50,'dash');
 if(window.LY){for(var q2=0;q2<6;q2++)b.P(228,265,q2*50,q2*50+50,'dash');}else{[0,52.5,105,150,195,235.5].forEach(function(z,q){var w=[52.5,52.5,45,45,40.5,40.5][q];b.P(228,265,z,z+w,'dash');});b.P(215,265,105,195,'dash');}
 b.hd(102.5,162.5,m-10,'60');b.hd(0,102.5,m-10,'102.5');b.hd(162.5,265,m-10,'102.5');b.hd(0,265,m-24,'265');
@@ -771,7 +830,7 @@ document.getElementById('b2d').onclick=function(){pl.style.display='flex';show(c
 <script>(function(){var bm=document.getElementById('bm'),bar=document.querySelector('.bar');
 function setO(v){bar.classList.toggle('open',v);bm.textContent=v?'✕ إغلاق القائمة':'☰ القائمة';}
 bm.onclick=function(){setO(!bar.classList.contains('open'));};
-var auto={bw:1,b1:1,b2:1,b3:1,b2d:1,bt1:1,bt2:1,bt3:1,bt4:1,bt5:1};
+var auto={bw:1,b1:1,b2:1,b3:1,b2d:1,bt1:1,bt2:1,bt3:1,bt4:1,bt5:1,bt6:1,bci:1};
 bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b&&auto[b.id])setO(false);});
 var cv=document.getElementById('cv');if(cv)cv.addEventListener('pointerdown',function(){if(bar.classList.contains('open'))setO(false);});})();</script>
 </body>
